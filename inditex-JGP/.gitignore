@@ -12,6 +12,8 @@
 *.iml
 *.ipr
 */sonarlint/
+*/classes
+*/test-classes
 
 ### Eclipse ###
 .apt_generated
