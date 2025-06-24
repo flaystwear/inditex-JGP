@@ -18,6 +18,7 @@ import java.time.LocalDateTime;
 @Slf4j
 public class PriceFinderImpl implements PriceFinder {
 
+    
     private final FindPricesPort findPrices;
 
     private final PricesResponseMapper pricesResponseMapper;
