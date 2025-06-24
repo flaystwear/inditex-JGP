@@ -7,9 +7,6 @@ import com.juangp.inditex.domain.model.out.PricesResponse;
 import com.juangp.inditex.domain.services.ValidateRequestData;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,8 +19,6 @@ import java.time.format.DateTimeFormatter;
 @RequiredArgsConstructor@Slf4j
 public class PricesController {
 
-
-    @Autowired
     private final PriceFinder priceFinderImpl;
 
     private final ValidateRequestData validateRequestData;

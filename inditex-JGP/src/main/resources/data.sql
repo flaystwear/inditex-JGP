@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS PRICES (
     price_list BIGINT,
     product_id BIGINT,
     priority BIGINT,
-    price DECIMAL,
+    price DECIMAL (10,2),
     currency VARCHAR(255)
 );
 --Insertado de filas para crear campos del ejemplo
