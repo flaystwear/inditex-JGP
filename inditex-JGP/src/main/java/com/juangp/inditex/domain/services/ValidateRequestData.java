@@ -8,6 +8,4 @@ import java.time.LocalDateTime;
 @Repository
 public interface ValidateRequestData {
     void checkPricesRequest(PricesRequest pricesRequest);
-
-    void checkPricesRequest(LocalDateTime date, Long productId, Long brandId);
 }
