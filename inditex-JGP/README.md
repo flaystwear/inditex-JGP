@@ -7,15 +7,14 @@ based on the brand, product, and time period consulted.
 It implements a Hexagonal Architecture, to focus on clear separation of
 concerns and independence of business logic from technical implementation
 details, trying to use SOLID-like* approach.
-
-The diagram of the application is shown below. The 3 layers are
+ The 3 layers are
 - Application: It defines what the app is going to do
 - Domain: Contains the classes that will be used, as well as their
   relations and mappers. It contains custom exceptions as well
 - Infrastructure: the logic of the app, and it's enpoints, exception handler,
   and external elements needed, such as the H2 Database.
 
-![aapplication_architecture.drawio.png](src/main/resources/documentation/aapplication_architecture.drawio.png)
+
 
 ## Database Description
 The application uses an in-memory H2 database, whose structure is as it follows:
