@@ -8,9 +8,6 @@ import com.juangp.inditex.domain.model.dto.Prices;
 import com.juangp.inditex.domain.model.in.PricesRequest;
 import com.juangp.inditex.domain.model.out.PricesResponse;
 import com.juangp.inditex.domain.services.mapper.PricesResponseMapper;
-import com.juangp.inditex.infraestructure.adapters.service.PriceFinderImpl;
-import com.juangp.inditex.infraestructure.ports.database.mapping.PriceEntityMapper;
-import com.juangp.inditex.infraestructure.ports.database.repository.PricesRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -30,12 +27,6 @@ class PriceFinderImplTest {
 
     @Mock
     private FindPricesPort findPricesPort;
-
-    @Mock
-    private PricesRepository pricesRepository;
-
-    @Mock
-    private PriceEntityMapper priceEntityMapper;
 
     @InjectMocks
     private PriceFinderImpl priceFinder;
