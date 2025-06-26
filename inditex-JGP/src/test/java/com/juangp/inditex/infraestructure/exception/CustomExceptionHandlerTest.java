@@ -4,7 +4,6 @@ package com.juangp.inditex.infraestructure.exception;
 import com.juangp.inditex.domain.exception.PriceNotFoundException;
 import com.juangp.inditex.domain.exception.RequestNotAcceptableException;
 import com.juangp.inditex.domain.exception.TraductionDtoException;
-import com.juangp.inditex.infraestructure.exception.CustomExceptionHandler;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

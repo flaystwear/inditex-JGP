@@ -1,12 +1,10 @@
-package com.juangp.inditex.infraestructure.web.out;
+package com.juangp.inditex.infraestructure.ports.database.repository;
 
 
 import com.juangp.inditex.domain.exception.PriceNotFoundException;
 import com.juangp.inditex.domain.model.dto.Prices;
 import com.juangp.inditex.infraestructure.ports.database.entity.PricesEntity;
 import com.juangp.inditex.infraestructure.ports.database.mapping.PriceEntityMapper;
-import com.juangp.inditex.infraestructure.ports.database.repository.PricesRepository;
-import com.juangp.inditex.infraestructure.ports.database.repository.PricesServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
