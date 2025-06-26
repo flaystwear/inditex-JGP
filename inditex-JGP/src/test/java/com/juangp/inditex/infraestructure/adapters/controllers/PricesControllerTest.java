@@ -2,7 +2,6 @@ package com.juangp.inditex.infraestructure.adapters.controllers;
 
 import com.juangp.inditex.application.ports.in.PriceFinder;
 import com.juangp.inditex.domain.model.dto.FullPrice;
-import com.juangp.inditex.domain.model.in.PricesRequest;
 import com.juangp.inditex.domain.model.out.PricesResponse;
 import com.juangp.inditex.domain.services.ValidateRequestData;
 import org.junit.jupiter.api.BeforeEach;
@@ -40,18 +39,19 @@ class PricesControllerTest {
     }
 
     /**
-     * Method under test: {@link PricesController#findPrice(PricesRequest)}
+     * Method under test: {@link PricesController#findPrice(Long brand, Long product, LocalDateTime date)}
      */
     @Test
     void testFindPrice_WithValidRequest_ShouldReturnOKResponse() {
         // Arrange
         LocalDateTime date = LocalDateTime.now();
-        PricesRequest request = new PricesRequest(1L, 1L, date);
+        Long brand=1L;
+        Long product= 1L;
         PricesResponse response = new PricesResponse(1L, 1L, 1L, date, date, new FullPrice("EUR", BigDecimal.valueOf(1)));
-        when(priceFinder.findPricesInditex(any())).thenReturn(response);
-        doNothing().when(validateRequestData).checkPricesRequest(any());
+        when(priceFinder.findPricesInditex(any(), any(), any())).thenReturn(response);
+        doNothing().when(validateRequestData).checkPricesRequest(any(),any(),any());
         // Act
-        ResponseEntity<PricesResponse> result = pricesController.findPrice(request);
+        ResponseEntity<PricesResponse> result = pricesController.findPrice(brand, product,date);
 
         // Assert
         assertEquals(HttpStatus.OK, result.getStatusCode());

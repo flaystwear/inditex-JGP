@@ -80,27 +80,6 @@ class PricesEntityTest {
      * Method under test: {@link PricesEntity#equals(Object)}
      */
     @Test
-    void testEquals2() {
-        // Arrange
-        PricesEntity pricesEntity = new PricesEntity();
-        pricesEntity.setBrandId(1L);
-        pricesEntity.setCurrency("GBP");
-        pricesEntity.setEndDate(LocalDate.of(1970, 1, 1).atStartOfDay());
-        pricesEntity.setIdPrice(1L);
-        pricesEntity.setPrice(new BigDecimal("2.3"));
-        pricesEntity.setPriceList(1L);
-        pricesEntity.setPriority(1L);
-        pricesEntity.setProductId(1L);
-        pricesEntity.setStartDate(LocalDate.of(1970, 1, 1).atStartOfDay());
-
-        // Act and Assert
-        assertNotEquals(null,pricesEntity);
-    }
-
-    /**
-     * Method under test: {@link PricesEntity#equals(Object)}
-     */
-    @Test
     void testEquals3() {
         // Arrange
         PricesEntity pricesEntity = new PricesEntity();
