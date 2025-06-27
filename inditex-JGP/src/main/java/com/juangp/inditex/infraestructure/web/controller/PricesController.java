@@ -2,7 +2,6 @@ package com.juangp.inditex.infraestructure.web.controller;
 
 
 import com.juangp.inditex.application.ports.in.PriceFindUseCase;
-import com.juangp.inditex.config.annotations.WebAdapter;
 import com.juangp.inditex.domain.model.out.PricesResponse;
 import com.juangp.inditex.domain.services.ValidateRequestData;
 import io.swagger.v3.oas.annotations.Operation;
@@ -16,7 +15,10 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -24,7 +26,6 @@ import java.time.format.DateTimeFormatter;
 @RestController
 @RequiredArgsConstructor@Slf4j
 @Validated
-@WebAdapter
 public class PricesController {
 
     private final PriceFindUseCase priceFindUseCaseImpl;
