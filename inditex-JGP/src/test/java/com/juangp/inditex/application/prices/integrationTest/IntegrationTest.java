@@ -27,13 +27,13 @@ class IntegrationTest {
     private TestRestTemplate restTemplate;
 
     @Test
-    void testEndpoint_ShouldReturnNotFound() {
+    void testEndpoint_Case_1() {
         LocalDateTime date = LocalDateTime.of(2020, 6, 14, 10, 0, 0);
         Long brandId = 1L;
         Long productId = 35455L;
         LocalDateTime startDate = LocalDateTime.of(2020, 6, 14, 0, 0, 0);
         LocalDateTime endDate = LocalDateTime.of(2020, 12, 31, 23, 59, 59);
-        // Convertimos la fecha a un formato compatible con el query param
+
         String formattedDate = date.format(DateTimeFormatter.ISO_DATE_TIME);
         String url = String.format(
                 "http://localhost:%d/api/v2/prices/inditex/brand/%d/product/%d?date=%s",
@@ -48,6 +48,35 @@ class IntegrationTest {
                 new FullPrice(
                         "EUR",
                        new BigDecimal("35.50")
+                )
+        );
+
+        PricesResponse result = this.restTemplate.getForObject(url, PricesResponse.class);
+        assertThat(result).isEqualTo(expected);
+    }
+
+    @Test
+    void testEndpoint_Case_2() {
+        LocalDateTime date = LocalDateTime.of(2020, 6, 14, 16, 0, 0);
+        Long brandId = 1L;
+        Long productId = 35455L;
+        LocalDateTime startDate = LocalDateTime.of(2020, 6, 14, 15, 0, 0);
+        LocalDateTime endDate = LocalDateTime.of(2020, 6, 14, 18, 30, 0);
+
+        String formattedDate = date.format(DateTimeFormatter.ISO_DATE_TIME);
+        String url = String.format(
+                "http://localhost:%d/api/v2/prices/inditex/brand/%d/product/%d?date=%s",
+                port, brandId, productId, formattedDate
+        );
+        PricesResponse expected=new PricesResponse(
+                productId,
+                brandId,
+                2L,
+                startDate,
+                endDate,
+                new FullPrice(
+                        "EUR",
+                        new BigDecimal("25.45")
                 )
         );
 
