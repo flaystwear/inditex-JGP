@@ -6,6 +6,9 @@
 */target/generated-sources/
 */target/classes/generated-test-sources/
 */target/classes/
+*/sonar
+*/test-classes
+*/classes
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
