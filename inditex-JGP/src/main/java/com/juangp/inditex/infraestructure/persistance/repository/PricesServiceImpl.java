@@ -1,9 +1,7 @@
 package com.juangp.inditex.infraestructure.persistance.repository;
 
 
-
 import com.juangp.inditex.application.ports.out.FindPricesPort;
-import com.juangp.inditex.config.annotations.PersistenceAdapter;
 import com.juangp.inditex.domain.exception.PriceNotFoundException;
 import com.juangp.inditex.domain.exception.TraductionDtoException;
 import com.juangp.inditex.domain.model.dto.Prices;
@@ -18,7 +16,6 @@ import java.time.LocalDateTime;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-@PersistenceAdapter
 public class PricesServiceImpl implements FindPricesPort {
 
     private final PricesRepository pricesRepository;

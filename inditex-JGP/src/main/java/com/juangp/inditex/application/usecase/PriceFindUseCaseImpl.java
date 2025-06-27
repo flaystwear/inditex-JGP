@@ -2,7 +2,7 @@ package com.juangp.inditex.application.usecase;
 
 import com.juangp.inditex.application.ports.in.PriceFindUseCase;
 import com.juangp.inditex.application.ports.out.FindPricesPort;
-import com.juangp.inditex.config.annotations.UseCase;
+
 import com.juangp.inditex.domain.exception.TraductionDtoException;
 import com.juangp.inditex.domain.model.dto.Prices;
 import com.juangp.inditex.domain.model.out.PricesResponse;
@@ -16,7 +16,6 @@ import java.time.LocalDateTime;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-@UseCase
 public class PriceFindUseCaseImpl implements PriceFindUseCase {
 
     
