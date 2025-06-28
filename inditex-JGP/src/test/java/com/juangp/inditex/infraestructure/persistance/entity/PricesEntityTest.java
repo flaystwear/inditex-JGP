@@ -1,4 +1,4 @@
-package com.juangp.inditex.infraestructure.ports.database.entity;
+package com.juangp.inditex.infraestructure.persistance.entity;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -10,7 +10,6 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-import com.juangp.inditex.infraestructure.ports.database.entity.PricesEntity;
 import org.junit.jupiter.api.Test;
 
 class PricesEntityTest {

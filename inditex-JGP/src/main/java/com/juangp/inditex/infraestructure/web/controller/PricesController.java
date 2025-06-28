@@ -49,14 +49,10 @@ public class PricesController {
             @ApiResponse(responseCode = "404", description = "Price not found", content = @Content)
     })
     @GetMapping(value = "/api/v2/prices/inditex/brand/{brandId}/product/{productId}")
-    ResponseEntity<PricesResponse> findPrice(
+    public ResponseEntity<PricesResponse> findPrice(
             @PathVariable Long brandId,
             @PathVariable Long productId,
             @RequestParam("date") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime date) {
-        /*
-         *Se coge el momento en el que se recibe la petición y lo convertimos en string
-         * para mostrarlo en el log junto a la petición
-         */
         LocalDateTime localDateTime1 = LocalDateTime.now();
         String formattedDateTime1 = localDateTime1.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
         log.info("Petición recibida a  {}.", formattedDateTime1);

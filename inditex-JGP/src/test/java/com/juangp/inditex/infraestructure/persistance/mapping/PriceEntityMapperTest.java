@@ -1,9 +1,8 @@
-package com.juangp.inditex.infraestructure.ports.database.mapping;
+package com.juangp.inditex.infraestructure.persistance.mapping;
 
 
 import com.juangp.inditex.domain.model.dto.Prices;
-import com.juangp.inditex.infraestructure.ports.database.entity.PricesEntity;
-import com.juangp.inditex.infraestructure.ports.database.mapping.PriceEntityMapper;
+import com.juangp.inditex.infraestructure.persistance.entity.PricesEntity;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
