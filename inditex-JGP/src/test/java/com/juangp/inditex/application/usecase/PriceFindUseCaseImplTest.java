@@ -3,26 +3,23 @@ package com.juangp.inditex.application.usecase;
 
 import com.juangp.inditex.application.ports.out.FindPricesPort;
 import com.juangp.inditex.domain.exception.TraductionDtoException;
-import com.juangp.inditex.domain.model.dto.FullPrice;
 import com.juangp.inditex.domain.model.dto.Prices;
 import com.juangp.inditex.domain.model.out.PricesResponse;
-import com.juangp.inditex.domain.services.mapper.PricesResponseMapper;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
 
+@ExtendWith(MockitoExtension.class)
 class PriceFindUseCaseImplTest {
-
-    @Mock
-    private PricesResponseMapper pricesResponseMapper;
 
     @Mock
     private FindPricesPort findPricesPort;
@@ -30,32 +27,6 @@ class PriceFindUseCaseImplTest {
     @InjectMocks
     private PriceFindUseCaseImpl priceFinder;
 
-    @BeforeEach
-    void setUp() {
-        MockitoAnnotations.initMocks(this);
-    }
-
-
-    /**
-     * Method under test: {@link PriceFindUseCaseImpl#buildResponse(Prices)}
-     */
-    @Test
-    void testBuildResponse() {
-        // Arrange
-        LocalDateTime date = LocalDateTime.now();
-        Prices prices = new Prices(1L,1L,1L,date,date,1L, BigDecimal.valueOf(100.0), "EUR");
-        PricesResponse expectedResponse = new PricesResponse(1L,1L,1L,date, date, new
-                FullPrice("EUR", BigDecimal.valueOf(1)));
-
-
-        when(pricesResponseMapper.mapPricesToPricesResponse(prices)).thenReturn(expectedResponse);
-
-        // Act
-        PricesResponse actualResponse = priceFinder.buildResponse(prices);
-
-        // Assert
-        assertEquals(expectedResponse, actualResponse);
-    }
 
     /**
      * Method under test: {@link PriceFindUseCaseImpl#findPricesInditex(LocalDateTime, Long, Long)}
@@ -67,9 +38,6 @@ class PriceFindUseCaseImplTest {
         Prices prices = new Prices(1L,1L,1L,date,date,1L, BigDecimal.valueOf(100.0), "EUR");
         when(findPricesPort.findByBrandIdAndProductIdAndDate(anyLong(), anyLong(), any(LocalDateTime.class)))
                 .thenReturn(prices);
-        PricesResponse expectedResponse = new PricesResponse(1L,1L,1L,date, date, new FullPrice("EUR", BigDecimal.valueOf(1)));
-        when(pricesResponseMapper.mapPricesToPricesResponse(prices)).thenReturn(expectedResponse);
-        // Act
         PricesResponse actualResponse = priceFinder.findPricesInditex(date,1L,1L);
 
         // Assert

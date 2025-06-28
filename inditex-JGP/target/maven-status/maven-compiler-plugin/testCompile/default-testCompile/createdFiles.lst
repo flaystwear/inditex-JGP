@@ -1,0 +1,8 @@
+com\juangp\inditex\application\prices\integrationTest\IntegrationTest.class
+com\juangp\inditex\infraestructure\persistance\mapping\PriceEntityMapperTest.class
+com\juangp\inditex\infraestructure\persistance\entity\PricesEntityTest.class
+com\juangp\inditex\infraestructure\web\controller\PricesControllerTest.class
+com\juangp\inditex\infraestructure\persistance\repository\PricesServiceImplTest.class
+com\juangp\inditex\application\usecase\PriceFindUseCaseImplTest.class
+com\juangp\inditex\infraestructure\exception\CustomExceptionHandlerTest.class
+com\juangp\inditex\InditexPricesApplicationIntegrationTest.class

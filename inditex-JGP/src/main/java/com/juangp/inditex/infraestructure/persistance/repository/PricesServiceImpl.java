@@ -24,21 +24,15 @@ public class PricesServiceImpl implements FindPricesPort {
 
 
     @Override
-    public Prices findByBrandIdAndProductIdAndDate(Long brandId, Long productId, LocalDateTime date) {
-        /*Busqueda en base de datos de la informacion de prices solicitada
-         * y conversión al object DTO Prices para tratamiento interno
-         * */
-        PricesEntity pricesEntity = pricesRepository.findByBrandIdAndProductIdAndDate(brandId, productId, date);
+    public Prices findByBrandIdAndProductIdAndDate( final Long brandId,final Long productId,final LocalDateTime date) {
+
+        final PricesEntity pricesEntity = pricesRepository.findByBrandIdAndProductIdAndDate(brandId, productId, date);
         if (null != pricesEntity) {
-            /*Se comprueba que haya encontrado algún precio, si no, se devuelve la excepción con
-             * código 404 not found.
-             * Si lo encuentra, se convierte en el formato de respuesta correspondiente
-             */
             try {
                 return priceEntityMapper.mapPricesEntityToPrices(pricesEntity);
             } catch (Exception e) {
                 log.error("Error translating to DTO from database");
-                throw new TraductionDtoException(String.format("Error traduciendo los datos de la base de datos: %s",
+                throw new TraductionDtoException(String.format("Error translating to DTO from database: %s",
                         e.getMessage()));
             }
         } else {
