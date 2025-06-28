@@ -1,0 +1,11 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+inditex_Juan_Gonzalez_Polo,com.juangp.inditex.infraestructure.web.exception,CustomExceptionHandler,0,24,0,0,0,4,0,4,0,4
+inditex_Juan_Gonzalez_Polo,com.juangp.inditex.infraestructure.persistance.repository,PricesServiceImpl,17,51,0,2,4,7,0,4,0,3
+inditex_Juan_Gonzalez_Polo,com.juangp.inditex,InditexPricesApplication,5,3,0,0,2,1,1,1,1,1
+inditex_Juan_Gonzalez_Polo,com.juangp.inditex.infraestructure.web.controller,PricesController,8,70,3,3,2,11,3,4,0,4
+inditex_Juan_Gonzalez_Polo,com.juangp.inditex.domain.exception,TraductionDtoException,3,4,0,0,2,2,1,1,1,1
+inditex_Juan_Gonzalez_Polo,com.juangp.inditex.domain.exception,PriceNotFoundException,3,4,0,0,2,2,1,1,1,1
+inditex_Juan_Gonzalez_Polo,com.juangp.inditex.domain.exception,RequestNotAcceptableException,3,4,0,0,2,2,1,1,1,1
+inditex_Juan_Gonzalez_Polo,com.juangp.inditex.application.usecase,PriceFindUseCaseImpl,0,70,0,2,0,16,0,5,0,4
+inditex_Juan_Gonzalez_Polo,com.juangp.inditex.infraestructure.persistance.mapping,PriceEntityMapper,0,23,0,0,0,10,0,2,0,2
+inditex_Juan_Gonzalez_Polo,com.juangp.inditex.infraestructure.persistance.entity,PricesEntity,28,397,24,54,0,12,22,41,0,24

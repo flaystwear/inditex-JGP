@@ -8,15 +8,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-/*
- * Con este controlador de excepciones no hace falta
- * controlar de forma individual en cada implementación
- * las excepciones devueltas, al lanzar las excepciones en el código:
- * PriceNotFoundException
- * TraductionDtoException
- * RequestNotAcceptableException
- * se manda automáticamente el ResponseEntity con el código de error correspondiente
- * */
 @ControllerAdvice
 public class CustomExceptionHandler {
 

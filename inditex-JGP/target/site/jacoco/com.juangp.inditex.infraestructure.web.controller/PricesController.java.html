@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PricesController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">inditex_Juan_Gonzalez_Polo</a> &gt; <a href="index.source.html" class="el_package">com.juangp.inditex.infraestructure.web.controller</a> &gt; <span class="el_source">PricesController.java</span></div><h1>PricesController.java</h1><pre class="source lang-java linenums">package com.juangp.inditex.infraestructure.web.controller;
+
+
+import com.juangp.inditex.application.ports.in.PriceFindUseCase;
+import com.juangp.inditex.domain.exception.RequestNotAcceptableException;
+import com.juangp.inditex.domain.model.out.PricesResponse;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+@RestController
+<span class="fc" id="L27">@RequiredArgsConstructor@Slf4j</span>
+@Validated
+public class PricesController {
+
+    private final PriceFindUseCase priceFindUseCaseImpl;
+
+
+    @Operation(summary = &quot;Get the price for a given time using its productId, brandId. &quot; +
+            &quot;If there is more than one product in this lapse of time,&quot; +
+            &quot; it will get the one with the highest priority&quot;
+    )
+    @ApiResponses(value = {
+            @ApiResponse(
+                    responseCode = &quot;200&quot;,
+                    description = &quot;Found the price&quot;,
+                    content = {
+                            @Content(mediaType = &quot;application/json&quot;, schema = @Schema(implementation = PricesResponse.class))
+                    }
+            ),
+            @ApiResponse(responseCode = &quot;400&quot;, description = &quot;Incomplete request parameters&quot;, content = @Content),
+            @ApiResponse(responseCode = &quot;404&quot;, description = &quot;Price not found&quot;, content = @Content)
+    })
+    @GetMapping(value = &quot;/api/v2/prices/inditex/brand/{brandId}/product/{productId}&quot;)
+    public ResponseEntity&lt;PricesResponse&gt; findPrice(
+            @PathVariable Long brandId,
+            @PathVariable Long productId,
+            @RequestParam(&quot;date&quot;) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime date) {
+<span class="fc" id="L54">        LocalDateTime localDateTime1 = LocalDateTime.now();</span>
+<span class="fc" id="L55">        String formattedDateTime1 = localDateTime1.format(DateTimeFormatter.ofPattern(&quot;yyyy-MM-dd HH:mm:ss&quot;));</span>
+<span class="fc" id="L56">        log.info(&quot;Petición recibida a  {}.&quot;, formattedDateTime1);</span>
+
+<span class="fc" id="L58">        this.checkPricesRequest(date, productId, brandId);</span>
+<span class="fc" id="L59">        log.info(&quot;Request: brand={}, product={}, date={}&quot;, brandId, productId, date);</span>
+<span class="fc" id="L60">        PricesResponse response = priceFindUseCaseImpl.findPricesInditex(date, productId, brandId);</span>
+<span class="fc" id="L61">        log.info(&quot;Petición respondida : {}.&quot;, response);</span>
+<span class="fc" id="L62">        return new ResponseEntity&lt;&gt;(response, HttpStatus.OK);</span>
+    }
+
+    private void checkPricesRequest(LocalDateTime date, Long productId, Long brandId) {
+<span class="pc bpc" id="L66" title="3 of 6 branches missed.">        if (null == date</span>
+                || null == productId
+                || null == brandId) {
+<span class="nc" id="L69">            log.error(&quot;Request body missing some element&quot;);</span>
+<span class="nc" id="L70">            throw new RequestNotAcceptableException(&quot;Missing key elements on the Request Body&quot;);</span>
+        }
+<span class="fc" id="L72">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

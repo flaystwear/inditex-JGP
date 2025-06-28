@@ -2,8 +2,8 @@ package com.juangp.inditex.infraestructure.web.controller;
 
 
 import com.juangp.inditex.application.ports.in.PriceFindUseCase;
+import com.juangp.inditex.domain.exception.RequestNotAcceptableException;
 import com.juangp.inditex.domain.model.out.PricesResponse;
-import com.juangp.inditex.domain.services.ValidateRequestData;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -30,8 +30,6 @@ public class PricesController {
 
     private final PriceFindUseCase priceFindUseCaseImpl;
 
-    private final ValidateRequestData validateRequestData;
-
 
     @Operation(summary = "Get the price for a given time using its productId, brandId. " +
             "If there is more than one product in this lapse of time," +
@@ -50,17 +48,26 @@ public class PricesController {
     })
     @GetMapping(value = "/api/v2/prices/inditex/brand/{brandId}/product/{productId}")
     public ResponseEntity<PricesResponse> findPrice(
-            @PathVariable Long brandId,
-            @PathVariable Long productId,
-            @RequestParam("date") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime date) {
-        LocalDateTime localDateTime1 = LocalDateTime.now();
-        String formattedDateTime1 = localDateTime1.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-        log.info("Petición recibida a  {}.", formattedDateTime1);
+            @PathVariable final Long brandId,
+            @PathVariable final Long productId,
+            @RequestParam("date") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) final LocalDateTime date) {
+        final LocalDateTime localDateTime1 = LocalDateTime.now();
+        final String formattedDateTime1 = localDateTime1.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        log.info("Request recieved at  {}.", formattedDateTime1);
 
-        validateRequestData.checkPricesRequest(date, productId, brandId);
+        this.checkPricesRequest(date, productId, brandId);
         log.info("Request: brand={}, product={}, date={}", brandId, productId, date);
-        PricesResponse response = priceFindUseCaseImpl.findPricesInditex(date, productId, brandId);
-        log.info("Petición respondida : {}.", response);
+        final PricesResponse response = priceFindUseCaseImpl.findPricesInditex(date, productId, brandId);
+        log.info("Request answered : {}.", response);
         return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    private void checkPricesRequest(final LocalDateTime date, final Long productId, final Long brandId) {
+        if (null == date
+                || null == productId
+                || null == brandId) {
+            log.error("Request body missing some element");
+            throw new RequestNotAcceptableException("Missing key elements on the Request Body");
+        }
     }
 }

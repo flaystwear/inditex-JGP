@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class PriceEntityMapper {
-    public Prices mapPricesEntityToPrices(PricesEntity entity) {
+    public Prices mapPricesEntityToPrices(final PricesEntity entity) {
         return new Prices(
                 entity.getProductId(),
                 entity.getBrandId(),
