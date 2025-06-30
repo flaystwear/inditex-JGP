@@ -7,9 +7,11 @@ import com.juangp.inditex.infraestructure.persistance.entity.PricesEntity;
 import com.juangp.inditex.infraestructure.persistance.mapping.PriceEntityMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -19,6 +21,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
+@ExtendWith(MockitoExtension.class)
 class PricesServiceImplTest {
 
     @Mock
@@ -30,10 +33,6 @@ class PricesServiceImplTest {
     @InjectMocks
     private PricesServiceImpl pricesRepositoryH2;
 
-    @BeforeEach
-    public void setup() {
-        MockitoAnnotations.initMocks(this);
-    }
     @Test
     void testfindByBrandIdAndProductIdAndDate_WithValidRequest_ShouldReturnOKResponse() {
         // Arrange

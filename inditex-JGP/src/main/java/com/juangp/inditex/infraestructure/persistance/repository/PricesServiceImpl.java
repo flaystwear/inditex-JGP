@@ -36,7 +36,8 @@ public class PricesServiceImpl implements FindPricesPort {
                         e.getMessage()));
             }
         } else {
-            log.error("No prices found in database");
+            log.error("Could not find prices for product: {}, brand: {}, date: {}",
+                    productId, brandId, date);
             throw new PriceNotFoundException(String.format("Could not find prices for product: %d, brand: %d, date: %s",
                     productId, brandId, date));
         }

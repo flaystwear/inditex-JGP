@@ -11,7 +11,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/v2/prices/inditex/brand/1/product/35455?date=2020-06-14T10:00:00",
+					"raw": "http://localhost:8080/api/v2/prices/inditex/products?date=2020-06-14T10:00:00&brand=1&product=35455",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -22,15 +22,20 @@
 						"v2",
 						"prices",
 						"inditex",
-						"brand",
-						"1",
-						"product",
-						"35455"
+						"products"
 					],
 					"query": [
 						{
 							"key": "date",
 							"value": "2020-06-14T10:00:00"
+						},
+						{
+							"key": "brand",
+							"value": "1"
+						},
+						{
+							"key": "product",
+							"value": "35455"
 						}
 					]
 				}
@@ -39,23 +44,11 @@
 		},
 		{
 			"name": "200-InditexTest2",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"brand\": 1,\r\n    \"product\": 35455,\r\n    \"date\": \"2020-06-14T16:00:00\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "http://localhost:8080/api/v2/prices/inditex/brand/1/product/35455?date=2020-06-14T16:00:00",
+					"raw": "http://localhost:8080/api/v2/prices/inditex/products?date=2020-06-14T16:00:00&brand=1&product=35455",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -66,15 +59,20 @@
 						"v2",
 						"prices",
 						"inditex",
-						"brand",
-						"1",
-						"product",
-						"35455"
+						"products"
 					],
 					"query": [
 						{
 							"key": "date",
 							"value": "2020-06-14T16:00:00"
+						},
+						{
+							"key": "brand",
+							"value": "1"
+						},
+						{
+							"key": "product",
+							"value": "35455"
 						}
 					]
 				}
@@ -87,7 +85,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/v2/prices/inditex/brand/1/product/35455?date=2020-06-14T21:00:00",
+					"raw": "http://localhost:8080/api/v2/prices/inditex/products?date=2020-06-14T21:00:00&brand=1&product=35455",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -98,15 +96,20 @@
 						"v2",
 						"prices",
 						"inditex",
-						"brand",
-						"1",
-						"product",
-						"35455"
+						"products"
 					],
 					"query": [
 						{
 							"key": "date",
 							"value": "2020-06-14T21:00:00"
+						},
+						{
+							"key": "brand",
+							"value": "1"
+						},
+						{
+							"key": "product",
+							"value": "35455"
 						}
 					]
 				}
@@ -119,7 +122,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/v2/prices/inditex/brand/1/product/35455?date=2020-06-15T10:00:00",
+					"raw": "http://localhost:8080/api/v2/prices/inditex/products?date=2020-06-15T10:00:00&brand=1&product=35455",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -130,15 +133,20 @@
 						"v2",
 						"prices",
 						"inditex",
-						"brand",
-						"1",
-						"product",
-						"35455"
+						"products"
 					],
 					"query": [
 						{
 							"key": "date",
 							"value": "2020-06-15T10:00:00"
+						},
+						{
+							"key": "brand",
+							"value": "1"
+						},
+						{
+							"key": "product",
+							"value": "35455"
 						}
 					]
 				}
@@ -151,7 +159,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/v2/prices/inditex/brand/1/product/35455?date=2020-06-16T21:00:00",
+					"raw": "http://localhost:8080/api/v2/prices/inditex/products?date=2020-06-16T21:00:00&brand=1&product=35455",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -162,15 +170,20 @@
 						"v2",
 						"prices",
 						"inditex",
-						"brand",
-						"1",
-						"product",
-						"35455"
+						"products"
 					],
 					"query": [
 						{
 							"key": "date",
 							"value": "2020-06-16T21:00:00"
+						},
+						{
+							"key": "brand",
+							"value": "1"
+						},
+						{
+							"key": "product",
+							"value": "35455"
 						}
 					]
 				}
@@ -179,23 +192,11 @@
 		},
 		{
 			"name": "400-InditexTest NOT FOUND",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"brand\": 1,\r\n    \"product\": 35456,\r\n    \"date\": \"2020-06-16T21:00:00\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "http://localhost:8080/api/v1/prices",
+					"raw": "http://localhost:8080/api/v2/prices/inditex/products?date=2020-06-16T21:00:00&brand=1&product=35456",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -203,8 +204,24 @@
 					"port": "8080",
 					"path": [
 						"api",
-						"v1",
-						"prices"
+						"v2",
+						"prices",
+						"inditex",
+						"products"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2020-06-16T21:00:00"
+						},
+						{
+							"key": "brand",
+							"value": "1"
+						},
+						{
+							"key": "product",
+							"value": "35456"
+						}
 					]
 				}
 			},
