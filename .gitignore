@@ -114,3 +114,25 @@ inditex-JGP/target/surefire-reports/TEST-com.juangp.inditex.infraestructure.pers
 inditex-JGP/target/surefire-reports/TEST-com.juangp.inditex.infraestructure.persistance.repository.PricesServiceImplTest.xml
 
 inditex-JGP/target/surefire-reports/TEST-com.juangp.inditex.infraestructure.web.controller.PricesControllerTest.xml
+
+inditex-JGP/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst
+
+inditex-JGP/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst
+
+inditex-JGP/target/site/jacoco/com.juangp.inditex.infraestructure.persistance.repository/index.html
+
+inditex-JGP/target/site/jacoco/com.juangp.inditex.infraestructure.persistance.repository/index.source.html
+
+inditex-JGP/target/site/jacoco/com.juangp.inditex.infraestructure.web.exception/index.html
+
+inditex-JGP/target/site/jacoco/com.juangp.inditex.infraestructure.web.exception/index.source.html
+
+inditex-JGP/target/site/jacoco/index.html
+
+inditex-JGP/target/site/jacoco/jacoco.csv
+
+inditex-JGP/target/surefire-reports/2025-06-30T14-52-53_332.dumpstream
+
+inditex-JGP/target/surefire-reports/com.juangp.inditex.infraestructure.integrationTest.IntegrationTest.txt
+
+inditex-JGP/target/surefire-reports/TEST-com.juangp.inditex.infraestructure.integrationTest.IntegrationTest.xml
