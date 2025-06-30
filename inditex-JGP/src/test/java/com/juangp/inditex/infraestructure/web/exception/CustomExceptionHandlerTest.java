@@ -7,6 +7,7 @@ import com.juangp.inditex.domain.exception.TraductionDtoException;
 import com.juangp.inditex.infraestructure.web.exception.CustomExceptionHandler;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ProblemDetail;
 import org.springframework.http.ResponseEntity;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -24,11 +25,11 @@ class CustomExceptionHandlerTest {
         PriceNotFoundException exception = new PriceNotFoundException("Price not found");
 
         // Act
-        ResponseEntity<Object> responseEntity = customExceptionHandler.handlePriceNotFoundException(exception);
+       ProblemDetail responseEntity = customExceptionHandler.handleNotFound(exception);
 
         // Assert
-        assertEquals(HttpStatus.NOT_FOUND, responseEntity.getStatusCode());
-        assertEquals("Price not found", responseEntity.getBody());
+        assertEquals(HttpStatus.NOT_FOUND.value(), responseEntity.getStatus());
+        assertEquals("Price not found", responseEntity.getDetail());
     }
 
     /**
@@ -40,11 +41,11 @@ class CustomExceptionHandlerTest {
         TraductionDtoException exception = new TraductionDtoException("Translation error");
 
         // Act
-        ResponseEntity<Object> responseEntity = customExceptionHandler.handleTraductionDtoErrorException(exception);
+        ProblemDetail responseEntity = customExceptionHandler.handleTraductionDtoErrorException(exception);
 
         // Assert
-        assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, responseEntity.getStatusCode());
-        assertEquals("Translation error", responseEntity.getBody());
+        assertEquals(HttpStatus.INTERNAL_SERVER_ERROR.value(), responseEntity.getStatus());
+        assertEquals("Translation error", responseEntity.getDetail());
     }
 
 

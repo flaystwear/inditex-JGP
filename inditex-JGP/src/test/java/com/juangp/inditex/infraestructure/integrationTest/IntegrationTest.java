@@ -1,4 +1,4 @@
-package com.juangp.inditex.application.prices.integrationTest;
+package com.juangp.inditex.infraestructure.integrationTest;
 
 import com.juangp.inditex.domain.model.dto.FullPrice;
 import com.juangp.inditex.domain.model.out.PricesResponse;
@@ -36,8 +36,8 @@ class IntegrationTest {
 
         String formattedDate = date.format(DateTimeFormatter.ISO_DATE_TIME);
         String url = String.format(
-                "http://localhost:%d/api/v2/prices/inditex/brand/%d/product/%d?date=%s",
-                port, brandId, productId, formattedDate
+                "http://localhost:%d/api/v2/prices/inditex/products?date=%s&brand=%d&product=%d",
+                port, formattedDate, brandId, productId
         );
         PricesResponse expected=new PricesResponse(
                 productId,
@@ -65,8 +65,8 @@ class IntegrationTest {
 
         String formattedDate = date.format(DateTimeFormatter.ISO_DATE_TIME);
         String url = String.format(
-                "http://localhost:%d/api/v2/prices/inditex/brand/%d/product/%d?date=%s",
-                port, brandId, productId, formattedDate
+                "http://localhost:%d/api/v2/prices/inditex/products?date=%s&brand=%d&product=%d",
+                port, formattedDate, brandId, productId
         );
         PricesResponse expected=new PricesResponse(
                 productId,

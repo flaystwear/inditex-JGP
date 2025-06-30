@@ -16,7 +16,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,6 +24,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 @RestController
+@RequestMapping("/api/v2")
 @RequiredArgsConstructor@Slf4j
 @Validated
 public class PricesController {
@@ -46,10 +47,10 @@ public class PricesController {
             @ApiResponse(responseCode = "400", description = "Incomplete request parameters", content = @Content),
             @ApiResponse(responseCode = "404", description = "Price not found", content = @Content)
     })
-    @GetMapping(value = "/api/v2/prices/inditex/brand/{brandId}/product/{productId}")
+    @GetMapping(value = "/prices/inditex/products")
     public ResponseEntity<PricesResponse> findPrice(
-            @PathVariable final Long brandId,
-            @PathVariable final Long productId,
+            @RequestParam ("brand") final Long brandId,
+            @RequestParam ("product") final Long productId,
             @RequestParam("date") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) final LocalDateTime date) {
         final LocalDateTime localDateTime1 = LocalDateTime.now();
         final String formattedDateTime1 = localDateTime1.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
