@@ -40,11 +40,8 @@ have some sort of correlation with this one.
 - *currency*: Currency of the price
 
 ## REST Endpoints
-This application provides 2 endpoints. Both end-up doing the same query and
-fetching/delievering the same data. One of them is type POST, and it requires
-a Request body that will contain the data needed to fulfil the search. The
-other one, is type GET, and it will take the data from the URL as path variables
-except for the date, that will be taken as a parameter.
+This application provides an endpoint type GET, and it will take the data from the URL as request parameters
+(brand id, product id and date)
 
 ##### NOTE:
 On the response, the original description didn't include the field "currency",
@@ -68,7 +65,7 @@ designing and documenting APIs:
 
 ### ENDPOINTS:
 ```http request
-GET /api/v2/prices
+GET /api/v2/prices/inditex/products
 ```
 ### POSTMAN COLLECTION TO TEST IT
 The collection is ready to import and test (local enviroment):
@@ -119,7 +116,9 @@ When executing the calls with Postman, it will look like this:
 The testing of the application was done using both junit and mockito for integrated tests
 to get the most coverage possible. Also, the tool Diffblue as an assitant to
 the creation of the tools has proven to be an excellent allie for developing use cases.
-Ther's also a Integration test: *src\test\java\com\juangp\inditex\application\service\prices\integrationTest\IntegrationTest.java*
+There's also a Integration test: *src\test\java\com\juangp\inditex\infraestructure\integrationTest\IntegrationTest.java*
+where all 5 requested cases are tested aswell.
+ 
 
 Here are the test coverages:
 
