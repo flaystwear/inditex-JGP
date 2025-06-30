@@ -5,12 +5,10 @@ import com.juangp.inditex.domain.exception.PriceNotFoundException;
 import com.juangp.inditex.domain.model.dto.Prices;
 import com.juangp.inditex.infraestructure.persistance.entity.PricesEntity;
 import com.juangp.inditex.infraestructure.persistance.mapping.PriceEntityMapper;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.math.BigDecimal;
