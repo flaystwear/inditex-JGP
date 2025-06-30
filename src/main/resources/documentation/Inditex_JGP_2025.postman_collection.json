@@ -1,0 +1,231 @@
+{
+	"info": {
+		"_postman_id": "8be534bd-c993-4c9d-b604-23658c0867a2",
+		"name": "Inditex_JGP_2025",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "200-InditexTest1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v2/prices/inditex/products?date=2020-06-14T10:00:00&brand=1&product=35455",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v2",
+						"prices",
+						"inditex",
+						"products"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2020-06-14T10:00:00"
+						},
+						{
+							"key": "brand",
+							"value": "1"
+						},
+						{
+							"key": "product",
+							"value": "35455"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "200-InditexTest2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v2/prices/inditex/products?date=2020-06-14T16:00:00&brand=1&product=35455",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v2",
+						"prices",
+						"inditex",
+						"products"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2020-06-14T16:00:00"
+						},
+						{
+							"key": "brand",
+							"value": "1"
+						},
+						{
+							"key": "product",
+							"value": "35455"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "200-InditexTest3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v2/prices/inditex/products?date=2020-06-14T21:00:00&brand=1&product=35455",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v2",
+						"prices",
+						"inditex",
+						"products"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2020-06-14T21:00:00"
+						},
+						{
+							"key": "brand",
+							"value": "1"
+						},
+						{
+							"key": "product",
+							"value": "35455"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "200-InditexTest4",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v2/prices/inditex/products?date=2020-06-15T10:00:00&brand=1&product=35455",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v2",
+						"prices",
+						"inditex",
+						"products"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2020-06-15T10:00:00"
+						},
+						{
+							"key": "brand",
+							"value": "1"
+						},
+						{
+							"key": "product",
+							"value": "35455"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "200-InditexTest5",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v2/prices/inditex/products?date=2020-06-16T21:00:00&brand=1&product=35455",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v2",
+						"prices",
+						"inditex",
+						"products"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2020-06-16T21:00:00"
+						},
+						{
+							"key": "brand",
+							"value": "1"
+						},
+						{
+							"key": "product",
+							"value": "35455"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "400-InditexTest NOT FOUND",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v2/prices/inditex/products?date=2020-06-16T21:00:00&brand=1&product=35456",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v2",
+						"prices",
+						"inditex",
+						"products"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2020-06-16T21:00:00"
+						},
+						{
+							"key": "brand",
+							"value": "1"
+						},
+						{
+							"key": "product",
+							"value": "35456"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

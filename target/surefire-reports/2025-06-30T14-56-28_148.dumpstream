@@ -1,0 +1,5 @@
+# Created at 2025-06-30T14:56:28.296
+Boot Manifest-JAR contains absolute paths in classpath 'D:\_Users\Juan\repoGit\inditex-JGP\inditex-JGP\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.juangp.inditex.infraestructure.integrationTest.IntegrationTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.772 s -- in com.juangp.inditex.infraestructure.integrationTest.IntegrationTest
