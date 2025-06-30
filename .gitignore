@@ -45,3 +45,16 @@ build/
 
 ### Mac OS ###
 .DS_Store
+.idea/vcs.xml
+
+target/inditex-JGP-1.1.0-SNAPSHOT.jar
+
+target/inditex-JGP-1.1.0-SNAPSHOT.jar.original
+
+target/jacoco.exec
+
+target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+
+target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+
+target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst
